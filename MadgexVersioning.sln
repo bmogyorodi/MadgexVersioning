@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VersioningApplication", "VersioningApplication\VersioningApplication.csproj", "{816ACD53-8BF0-437E-B9D1-4192BC960463}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VersioningTesting", "VersioningTesting\VersioningTesting.csproj", "{4E65D8FE-4212-49BA-8FEC-E7E980E6F941}"
+	ProjectSection(ProjectDependencies) = postProject
+		{816ACD53-8BF0-437E-B9D1-4192BC960463} = {816ACD53-8BF0-437E-B9D1-4192BC960463}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
