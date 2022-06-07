@@ -9,10 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="BadVersionFormatFileTest.cs" />
     <Compile Remove="TestVersion1.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="BadVersionFormatFileTest.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="TestVersion1.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

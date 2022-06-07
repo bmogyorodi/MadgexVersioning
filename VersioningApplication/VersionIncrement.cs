@@ -5,9 +5,9 @@ namespace versioning
 {
     public class VersionIncrement
     {
-        private static bool CheckVersionFormat(string version_number)
+        public static bool CheckVersionFormat(string version_number)
         {
-            var version_format = new Regex("^(0|([1-9][0-9]*))(.(0|([1-9][0-9]*))){3}$");
+            var version_format = new Regex("^(0|([1-9][0-9]*))(\\.(0|([1-9][0-9]*))){3}$");
 
             Match format_checking = version_format.Match(version_number);
 

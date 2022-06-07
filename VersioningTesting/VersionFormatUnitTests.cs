@@ -10,41 +10,44 @@ namespace VersionIncrementTesting
     [TestClass]
     public class VersionFormatUnitTests
     {
-        private void IncorrectVersionFormatSave(string version_number)
+
+
+        public static void TestVersionFormatChecking(string version_number)
         {
-            const string testFile = "TestVersion.cs";
-            try
-            {
-                SaveVersionNumberChanges(testFile, version_number);
-                Assert.Fail();
-            }
-            catch (Exception ex)
-            {
-                Assert.AreEqual("Cannot save incorrect version number into file!", ex.Message);
-            }
+ 
+         
+                
+                Assert.IsFalse(CheckVersionFormat(version_number));
 
         }
+
         [TestMethod]
         public void BasicVersionFormatRejection()
         {
-            IncorrectVersionFormatSave("Any string that's not a version number");
+            TestVersionFormatChecking("Any string that's not a version number");
         }
         [TestMethod]
         public void IncorrectVersionLengthCheck()
         {
-            IncorrectVersionFormatSave("1.1.1.1.1");
+            TestVersionFormatChecking("1.1.1.1.1");
         }
 
         [TestMethod]
         public void BadNumberFormatInVersionNumber()
         {
-            IncorrectVersionFormatSave("1.02.1.1");
+            TestVersionFormatChecking("1.02.1.1");
         }
 
         [TestMethod]
         public void DotAtTheEndOfVersionNumber()
         {
-            IncorrectVersionFormatSave("1.1.1.1.");
+            TestVersionFormatChecking("1.1.1.1.");
+        }
+
+        [TestMethod]
+        public void CheckRecievedBug()
+        {
+            TestVersionFormatChecking("1.2x3.4");
         }
     }
 }
